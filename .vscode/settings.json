@@ -1,0 +1,13 @@
+{
+  "search-online.add-search-engine": [
+    {
+      "name": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%SELECTION%"
+    },
+    {
+      "name": "Duck",
+      "url": "https://duckduckgo.com/?q=%SELECTION%"
+    }
+  ],
+  "search-online.search-engine": "naver"
+}
