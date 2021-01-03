@@ -87,13 +87,22 @@ p {
 
 /* Navbar */
 #navbar {
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: space-between;
-  background-color: pink;
   align-items: center;
   color: var(--color-white);
   padding: 16px;
+  background-color: transparent;
+  transition: all var(--animation-duration) ease-in;
 }
+
+#navbar.navbar--dark {
+  background-color: rgba(0, 0, 0, 0.795);
+  padding: 8px;
+}
+
 .navbar__menu {
   display: flex;
   align-items: center;
@@ -130,6 +139,7 @@ p {
 #home {
   background: url('imgs/home-background.png') center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 .home__avatar {
@@ -346,7 +356,7 @@ p {
   left: 0;
   opacity: 0;
   transform: translateY(10px);
-  transition: all var(--animation-duration) ease-in;
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .project:hover .project__description {
