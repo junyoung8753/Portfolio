@@ -55,8 +55,56 @@ document.addEventListener('scroll', () => {
 arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
 });
-
+//---------------------------------------------------
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
+//----------------------------------------------------
+
+//Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (event) => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  projectContainer.classList.add('anim-out');
+ 
+
+setTimeout(() => {
+  projects.forEach((project) => {
+    const type = project.dataset.type;
+    if (type === filter || filter === '*') {
+      project.classList.remove('invisible');
+    } else {
+      project.classList.add('invisible');
+    }
+  });
+  projectContainer.classList.remove('anim-out');
+}, 300);
+});
+
+
+//--------------------------------------------------------------------------
+/* const categoryBtn = document.querySelector('.category__btn');
+workBtnContainer.addEventListener('click', () => {
+  const target = event.target;
+  const link = target.dataset.link;
+
+  if (link == null) {
+    return;
+  }
+  init(link);
+});
+
+function init(event) {
+  const project = document.querySelectorAll(`.project${event}`);
+  console.log(project);
+  const ddd = document.getElementsByClassName(event);
+  console.log(ddd);
+  // if(project == )
+} */
