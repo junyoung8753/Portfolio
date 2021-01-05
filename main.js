@@ -5,6 +5,9 @@ document.addEventListener('scroll', () => {
   const navbar = document.querySelector('#navbar');
   const navbarHeight = navbar.getBoundingClientRect().height;
   const scrollYHeight = window.scrollY;
+  // document.querySelector('.open').classList.remove('open')
+  navbarMenu.classList.remove('open');
+  
   if (navbarHeight < scrollYHeight) {
     navbar.classList.add('navbar--dark');
   } else {
@@ -21,6 +24,20 @@ navbarMenu.addEventListener('click', () => {
     return;
   }
   scrollIntoView(link);
+});
+//Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+const navbarMenuToggle = navbarMenu.classList.toggle('open');
+
+
+  /*  contains(=boolean)을 사용해 if else로 토글.
+    const navbarMenuMobile = navbarMenu.classList.contains('navbar__menu-mobile');
+    if (navbarMenuMobile) {
+      navbarMenu.classList.remove('navbar__menu-mobile');
+    } else {
+      navbarMenu.classList.add('navbar__menu-mobile');
+    } */
 });
 
 //Handle click on "contact me" button on home
@@ -85,7 +102,7 @@ workBtnContainer.addEventListener('click', (event) => {
     target.classList.add('selected');
   });
 
-  //-----------------------
+  //Project show animation
 
   projectContainer.classList.add('anim-out');
 
