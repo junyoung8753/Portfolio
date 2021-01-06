@@ -7,7 +7,7 @@ document.addEventListener('scroll', () => {
   const scrollYHeight = window.scrollY;
   // document.querySelector('.open').classList.remove('open')
   navbarMenu.classList.remove('open');
-  
+
   if (navbarHeight < scrollYHeight) {
     navbar.classList.add('navbar--dark');
   } else {
@@ -28,8 +28,7 @@ navbarMenu.addEventListener('click', () => {
 //Navbar toggle button for small screen
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
-const navbarMenuToggle = navbarMenu.classList.toggle('open');
-
+  const navbarMenuToggle = navbarMenu.classList.toggle('open');
 
   /*  contains(=boolean)을 사용해 if else로 토글.
     const navbarMenuMobile = navbarMenu.classList.contains('navbar__menu-mobile');
